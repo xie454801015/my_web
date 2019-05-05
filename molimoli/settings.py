@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'molimoli.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'molimoli',
-        'USER': 'root',
-        'PASSWORD': 'xie20100528',
+        'NAME': ******,
+        'USER': *****,
+        'PASSWORD': *************,
         'HOST': 'localhost',
         'PORT': '3306'
     }
