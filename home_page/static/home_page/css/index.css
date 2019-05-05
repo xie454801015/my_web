@@ -1,0 +1,129 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/*轮播图*/
+#main_wrapper{
+    display: block;
+    margin-top: 60px;
+    width: 100%;
+    z-index: 1;
+    background: #000000;
+
+}
+#main_wrapper .background_p{
+    width: 100%;
+    overflow: hidden;
+    height: 600px;
+    position: absolute;
+}
+#main_wrapper .background_p img{
+    display: block;
+    opacity: 0.4;
+    width: 100%;
+}
+/*图片切换*/
+#main_wrapper .picture_box{
+    margin: 0 auto;
+    overflow: hidden;
+    width: 1100px;
+    height:600px;
+    position: relative;
+    z-index: 2;
+}
+#main_wrapper .picture_box .picture_list{
+    list-style-type: none;
+    width:3300px;
+    position: absolute;
+    z-index: 3;
+}
+#main_wrapper .picture_box .picture_list li{
+    float: left;
+}
+#main_wrapper .picture_box .picture_list img{
+    width:1100px;
+    height: 600px;
+}
+/*轮播图信息盒相关*/
+#main_wrapper .picture_box .message_box{
+    position: absolute;
+    width: 1100px;
+    height: 60px;
+    bottom: 0;
+    z-index: 4;
+    background-color: #000000;
+    opacity: 0.6;
+    overflow: hidden;
+}
+#main_wrapper .picture_box .message_box .dot_list{
+    float:right;
+    list-style-type: none;
+    height: 60px;
+    margin-right: 10px;
+}
+#main_wrapper #selected{
+    background-color: #5c87d9;
+}
+
+#main_wrapper .picture_box .message_box .dot_list li{
+    display: inline-block;
+    width:20px;
+    height: 0;
+    padding-top: 20px;
+    opacity: 0.6;
+    border-radius: 10px;
+    margin: 20px 10px;
+    overflow: hidden;
+    background-color: #faebd7;
+}
+
+
+#main_wrapper .picture_box .message_box .text_list{
+    position: absolute;
+    left:0;
+    bottom:0;
+    margin-left:30px;
+    overflow: hidden;
+
+}
+
+#main_wrapper .picture_box .message_box .text_list a{
+    display: none;
+    text-decoration: none;
+    color: #faebd7;
+    width:600px;
+    height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    white-space:nowrap;
+}
+#main_wrapper #showed{
+    display: block;
+}
+
+#main_wrapper .picture_box .cut_button{
+    position: absolute;
+    top: 230px;
+    padding-top: 80px;
+    width:80px;
+    height: 0;
+    z-index: 4;
+    opacity: 0.2;
+    background-size: 80px 80px;
+}
+
+.cut_button.back_last{
+    left:10px;
+    background: url("../img/last.png") no-repeat;
+}
+.cut_button.back_next{
+    right: 10px;
+    background: url("../img/next.png") no-repeat;
+}
+#main_wrapper .picture_box .cut_button:hover{
+    opacity: 0.6;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+	<meta charset="UTF-8">
+	<title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet"	type="text/css" href="/static/css/index-base.css">
+    <script type="text/javascript" src="{% static "jquery-1.12.4.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "vue.min.js" %}"></script>
+	{% block head %}{% endblock %}
+</head>
+
+<body>
+    <header class="t_wrapper">
+		<div class="t_center">
+            <a class="logo_box" href="/">logo</a>
+			<ul class="ul_nav">
+                <li><a href="/">游戏</a></li>
+                <li><a href="/">宠物</a></li>
+                <li><a href="/">小工具</a></li>
+                <li><a href="/">设计师专栏</a></li>
+            </ul>
+			<div class="message_box">
+                {% if username %}
+                    <p>欢迎登录：<a href="/">{{username}}</a><a href="{% url 'accounts:logout' %}">注销</a></p>
+                {% else %}
+                    <a href="{% url 'accounts:login' %}"><img src="/static/img/users.png" alt="user">登录</a>
+                    <a href="{% url 'accounts:register' %}">注册</a>
+                {% endif %}
+			</div>
+		</div>
+	</header>
+    {% block content %}{% endblock %}
+    <footer  class="f_wrapper" >
+		<hr>
+		<div class="f_center">
+			<p>
+				Thanks for visiting my web
+			</p>
+            {% block footer %}{% endblock %}
+		</div>
+	</footer>
+</body>
+
+</html>

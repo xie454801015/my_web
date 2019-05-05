@@ -1,0 +1,49 @@
+{% extends 'index-base.html' %}
+
+
+{% block head %}
+    {% load staticfiles %}
+    <link REL="SHORTCUT ICON" HREF="{% static "/img/logo_cat.ico" %}"/>
+    <link rel="stylesheet" href="{% static "forum/css/block_articles.css" %}">
+    <script type="text/javascript" src="{% static "forum/js/articles.js" %}"></script>
+    <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+{% endblock %}
+
+{% block content %}
+    {% csrf_token %}
+
+    <div class="main_wrapper">
+{#        {% verbatim myblock %}#}
+        <div id='table_wrapper' class="block_wrapper">
+            <div class="block_bar">
+                <div>{[ block_name ]}</div>
+            </div>
+            <table  class="articles_box">
+                <thead class="thead_font">
+                    <tr>
+                        <td class="num">评论数</td>
+                        <td class="text">标题</td>
+                        <td class="msg">作者</td>
+                        <td class="msg">创建日期</td>
+                    </tr>
+                </thead>
+                <tbody class="tbody_font" v-for="article in articles">
+                    <tr >
+                        <td class="num">{[ article.praise_points ]}</td>
+                        <td class="text">{[ article.article_title ]}</td>
+                        <td class="msg">{[ article.author ]}</td>
+                        <td class="msg">{[ article.creation_time ]}</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+            <span>
+                <a href="">上一页</a>
+            </span>
+
+        </div>
+{#    {% endverbatim myblock %}#}
+    </div>
+
+{% endblock %}

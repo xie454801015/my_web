@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load staticfiles %}
+    <script type="text/javascript" src="{% static "jquery-1.12.4.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "accounts/js/register.js"%}"></script>
+    <script type="text/javascript" src="{% static "accounts/js/accounts_base.js"%}"></script>
+    <link rel="stylesheet" href="{% static "accounts/css/form_base.css"%}" type="text/css">
+    <title>欢迎注册!</title>
+</head>
+<body>
+    <div id="re_main_wrapper">
+    <div class="main_box">
+        <form action={%url 'accounts:register'%} method="POST" id="register" onsubmit="return false">
+            {% csrf_token %}
+            <h2>欢迎注册</h2>
+            <div class="input_box">
+                <label for="id_username">请输入用户名:</label>
+                <input type="text" id="id_username"  name="user_name" required maxlength="128">
+                <p>6~18个字符，可使用字母、数字、下划线，需以字母开头,区分大小写!</p>
+
+                <label for="id_password1">请输入密码:</label>
+                <input type="password" id="id_password1"  name="password1"  required maxlength="256">
+                <p>6~16个字符，区分大小写!</p>
+
+                <label for="id_password2">请再次输入密码:</label>
+                <input type="password" id="id_password2"  name="password2"  required maxlength="256">
+                <p>请再次输入密码!</p>
+
+                <label for="id_email">请输入电子邮箱:</label>
+                <input type="email" id="id_email" name="email"  required>
+                <p>请输入您的邮箱地址!</p>
+            </div>
+            <div class="chose_box">
+                <label for="id_sex">请选择性别:</label>
+                <ul style="display: inline-block">
+                    <li><input type="radio" name="sex" value="male" checked>男</li>
+                    <li><input type="radio" name="sex" value="female">女</li>
+                </ul>
+            </div>
+            <div class="input_box">
+                <label for="id_verify_code">请输入验证码:</label>
+                <input type="text" name="verify_code" id="id_verify_code" style="width: 150px;">
+                <img class="code" id="verify_code" src={% url 'accounts:captcha_set' %} alt="CheckCode">
+                <img class="refresh" id='refresh_code' src="{% static "accounts/img/refresh_code.png" %}" alt="refresh_code">
+                <p>请根据右图输入验证码!</p>
+            </div>
+            <div class="button_box" >
+                <button id="sub_button" class="button1" type="button" >提交</button>
+            </div>
+        </form>
+    </div>
+    </div>
+</body>
+</html>

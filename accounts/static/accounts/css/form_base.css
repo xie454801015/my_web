@@ -1,0 +1,79 @@
+*{
+	padding: 0;
+	margin: 0;
+    font-family: Arial;
+}
+#re_main_wrapper{
+    width: 100%;
+}
+.main_box{
+    margin:0 auto;
+    width: 600px;
+}
+.main_box form label{
+    display: inline-block;
+    width: 150px;
+    text-align: justify-all;
+    font-size: 20px;
+    color:#000000;
+    font-weight: bolder;
+}
+.main_box form .input_box p{
+    margin:5px 0px 5px 160px;
+    font-size: 5px;
+    color: #808080;
+}
+
+.main_box form .input_box input {
+    margin: 5px 10px;
+    width: 300px;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid #236b8e;
+}
+
+.main_box form .input_box .code{
+    width: 150px;
+    height:40px;
+    vertical-align: middle;
+}
+.main_box form .input_box .refresh{
+    margin-left: 10px;
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+}
+
+.main_box form .chose_box {
+    margin:5px 0px 10px 0px;
+}
+
+.main_box form .chose_box li{
+    display: inline-block;
+    font-size: 20px;
+}
+.main_box form .chose_box input {
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+}
+
+
+.main_box form .button_box{
+    display: table-cell;
+    text-align:center;
+    width: 600px;
+}
+
+.main_box form .button_box .button1{
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+    border:2px solid #5f9f9f;
+    border-radius: 5px;
+    background-color: #3299cc;
+    color: #fff;
+}
+
